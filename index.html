@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Specific Meta
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="keyword"
+        content="resume, cv, portfolio, vcard, responsive, retina, jquery, css3, tailwindcss, material CV, creative, designer, developer, online cv, online resume, powerful portfolio, professional, landing page">
+    <meta name="description" content="Minfo vCard/Resume TailwindCSS HTML Template">
+    <meta name="author" content="Themearray">
+
+    <!-- Site Title
+    ================================================== -->
+    <title>Lance Deng CV</title>
+
+    <!-- Site Favicon
+    ================================================== -->
+    <link rel="shortcut icon" href="assets/img/profile/image.png" sizes="any">
+
+    <!-- Google Fonts
+    ================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- All CSS Here
+    ================================================== -->
+    <link rel="stylesheet" href="assets/css/fontAwesome5Pro.css">
+    <link rel="stylesheet" href="assets/css/cdheadline.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+
+    <!-- 更新主题切换按钮样式和位置 -->
+    <style>
+        .style-switcher {
+            position: fixed;
+            bottom: 20px;
+            /* 改为底部固定 */
+            right: 20px;
+            z-index: 9999;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dark .style-switcher {
+            background: #1e1e1e;
+        }
+
+        .theme-toggle-btn {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        .dark .theme-toggle-btn {
+            color: #fff;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .style-switcher {
+                width: 35px;
+                height: 35px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+    </style>
+
+    <!-- 添加必要的CSS -->
+    <style>
+        #preloader {
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .loader_line {
+            width: 1px;
+            height: 200px;
+            position: absolute;
+            overflow: hidden;
+            background: transparent;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .loader_line:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 1px;
+            height: 0%;
+            background: var(--theme-color);
+            animation: lineHeight 1000ms ease-in-out infinite;
+            transform: translateY(-50%);
+        }
+
+        @keyframes lineHeight {
+            0% {
+                height: 0%;
+            }
+
+            50% {
+                height: 100%;
+            }
+
+            100% {
+                height: 0%;
+            }
+        }
+    </style>
+
+    <!-- 添加必要的动画样式 -->
+    <style>
+        .cd-headline.clip .cd-words-wrapper {
+            display: inline-block;
+            position: relative;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .cd-headline.clip .cd-words-wrapper::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: var(--theme-color);
+            transform: none;
+        }
+
+        .cd-headline.clip b {
+            opacity: 0;
+            display: inline-block;
+        }
+
+        .cd-headline.clip b.is-visible {
+            opacity: 1;
+        }
+    </style>
+
+</head>
+
+<body class="relative">
+    <!-- App Preloader Start -->
+    <div id="preloader" class="fixed inset-0 bg-white dark:bg-nightBlack z-[9999]">
+        <div class="loader_line"></div>
+        <div
+            class="absolute w-20 h-20 transition-all delay-300 -translate-x-1/2 -translate-y-1/2 rounded-full logo top-1/2 left-1/2 bg-nightBlack border-greyBlack flex-center">
+            <img src="assets/img/profile/image.png" alt="Lance Deng" class="w-full h-full rounded-full">
+        </div>
+    </div>
+    <!-- App Preloader End -->
+
+
+    <!-- App Start -->
+    <div class="relative pt-10 minfo__app max-xl:pt-20">
+        <div
+            class="menu-overlay fixed top-0 left-0 w-full h-full bg-black/60 transition-all duration-200 z-999 opacity-0 invisible [&.is-menu-open]:visible [&.is-menu-open]:opacity-100">
+        </div>
+        <div class="max-lg:px-4">
+
+            <!-- Mobile Menu Bar Start -->
+            <div
+                class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-2 px-3 bg-white/10 mobile-menu-bar sm:px-6 backdrop-blur-md xl:hidden">
+                <div class="text-lg font-medium name">
+                    <span class='flex items-center gap-2 text-black dark:text-white'>
+                        <span>Lance Deng</span>
+                    </span>
+                </div>
+                <!-- 移动端菜单按钮移到右上角 -->
+                <button
+                    class="w-10 h-10 border rounded-full hamburger menu_toggle bg-white dark:bg-nightBlack border-platinum dark:border-greyBlack flex-center"
+                    type="button" aria-label="Open Mobile Menu">
+                    <i class="fal fa-bars text-theme"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu Bar End -->
+
+
+            <!-- Mobile Menu Sidebar Start -->
+            <div
+                class="mobile-menu fixed top-0 -right-full w-full max-w-mobilemenu bg-flashWhite dark:bg-nightBlack z-999 h-full xl:hidden transition-all duration-300 [&.is-menu-open]:right-0 py-12 px-8 overflow-y-scroll">
+                <button
+                    class="absolute flex items-center justify-center w-9 h-9 text-sm text-white rounded-full close-menu top-4 right-4 bg-greyBlack"
+                    aria-label="Close Menu">
+                    <i class="fal fa-times"></i>
+                </button>
+                <div class="mb-6 text-lg font-medium text-black dark:text-white menu-title">
+                    Menu
+                </div>
+                <ul class="space-y-5 font-normal main-menu">
+                    <li data-scroll-nav="0" class="relative group">
+                        <a href="#home" class="flex items-center space-x-2 group">
+                            <span class="w-5 text-black dark:text-white group-[&.active]:text-theme">
+                                <i class="fal fa-home"></i>
+                            </span>
+                            <span
+                                class="group-[&.active]:text-theme dark:group-[&.active]:text-white group-hover:text-theme transition-colors">
+                                Home
+                            </span>
+                        </a>
+                    </li>
+                    <li data-scroll-nav="1" class="relative group">
+                        <a href="#about" class="flex items-center space-x-2 group">
+                            <span class="w-5 text-black dark:text-white group-[&.active]:text-theme">
+                                <i class="fal fa-user"></i>
+                            </span>
+                            <span
+                                class="group-[&.active]:text-theme dark:group-[&.active]:text-white group-hover:text-theme transition-colors">
+                                About
+                            </span>
+                        </a>
+                    </li>
+                    <li data-scroll-nav="2" class="relative group">
+                        <a href="#" class="flex items-center space-x-2 group">
+                            <span class="w-5 text-black dark:text-white group-[&.active]:text-theme">
+                                <i class="fal fa-briefcase"></i>
+                            </span>
+                            <span
+                                class="group-[&.active]:text-theme dark:group-[&.active]:text-white group-hover:text-theme transition-colors">
+                                Service
+                            </span>
+                        </a>
+                    </li>
+                    <li data-scroll-nav="3" class="relative group">
+                        <a href="#skill" class="flex items-center space-x-2 group">
+                            <span class="w-5 text-black dark:text-white group-[&.active]:text-theme">
+                                <i class="fal fa-graduation-cap"></i>
+                            </span>
+                            <span
+                                class="group-[&.active]:text-theme dark:group-[&.active]:text-white group-hover:text-theme transition-colors">
+                                Skills
+                            </span>
+                        </a>
+                    </li>
+
+                    <li data-scroll-nav="5" class="relative group">
+                        <a href="#portfolio" class="flex items-center space-x-2 group">
+                            <span class="w-5 text-black dark:text-white group-[&.active]:text-theme">
+                                <i class="fal fa-tasks-alt"></i>
+                            </span>
+                            <span
+                                class="group-[&.active]:text-theme dark:group-[&.active]:text-white group-hover:text-theme transition-colors">
+                                Poftfolio
+                            </span>
+                        </a>
+                    </li>
+                    <li data-scroll-nav="6" class="relative group">
+                        <a href="#blog" class="flex items-center space-x-2 group">
+                            <span class="w-5 text-black dark:text-white group-[&.active]:text-theme">
+                                <i class="fal fa-blog"></i>
+                            </span>
+                            <span
+                                class="group-[&.active]:text-theme dark:group-[&.active]:text-white group-hover:text-theme transition-colors">
+                                Blog
+                            </span>
+                        </a>
+                    </li>
+
+
+                </ul>
+                <br><br>
+                <div class="mb-4 font-medium text-black dark:text-white menu-title text-md">
+                    Get in Touch
+                </div>
+
+            </div>
+            <!-- Mobile Menu Sidebar End -->
+
+
+            <!-- Sidebar Profile Start -->
+            <div
+                class="w-full mx-auto minfo__sidebar__wrapper xl:fixed xl:top-1/2 xl:left-4 2xl:left-14 xl:-translate-y-1/2 md:max-w-sidebar xl:max-2xl:max-w-xs z-999">
+
+                <div class="p-3 mb-3 overflow-hidden minfo__sidebar bg-white dark:bg-nightBlack rounded-2xl">
+                    <div class="mx-4 mt-12 text-center user-info lg:mx-6">
+                        <!-- 更新侧边栏头像部分 -->
+                        <div
+                            class='w-36 h-36 mb-2.5 mx-auto border-6 border-platinum dark:border-[#2f2f2f] overflow-hidden rounded-full relative bg-white dark:bg-transparent'>
+                            <img src="assets/img/profile/image.png"
+                                class="w-full h-full rounded-full absolute top-0 left-0 object-cover" alt="Lance Deng">
+                        </div>
+                        <h6 class="mb-1 text-lg font-semibold text-black dark:text-white name">Lance Deng</h6>
+                        <div class="leading-none cd-headline clip is-full-width">
+                            <h6 class="text-sm cd-words-wrapper designation text-theme after:!bg-theme">
+                                <b class="font-normal is-visible">Senior Web3 Developer</b>
+                                <b class="font-normal">ZK & AI Expert</b>
+                                <b class="font-normal">Full-Stack Blockchain Engineer</b>
+                                <b class="font-normal">AI Integration Specialist</b>
+                                <b class="font-normal">Cryptography Researcher</b>
+                            </h6>
+                        </div>
+                    </div>
+                    <div
+                        class="pt-6 mx-4 border-t lg:mx-6 user-meta-info md:mx-7 my-7 border-platinum dark:border-metalBlack">
+                        <ul class="space-y-3">
+                            <li class="flex text-sm">
+                                <span class="flex-1 font-medium text-black dark:text-white">Residence:</span>
+                                <span>China</span>
+                            </li>
+                            <li class="flex text-sm">
+                                <span class="flex-1 font-medium text-black dark:text-white">City:</span>
+                                <span>Beijing</span>
+                            </li>
+                            <li class="flex text-sm">
+                                <span class="flex-1 font-medium text-black dark:text-white">birth:</span>
+                                <span>1997/11/27</span>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="px-4 py-5 lg:py-6 lg:px-6 rounded-2xl md:px-8 bg-flashWhite dark:bg-metalBlack">
+                        <div class="text-sm font-medium text-black dark:text-white mb-4">Social Media</div>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://github.com/peter-jim" target="_blank"
+                                class="px-4 py-2 text-sm font-medium rounded-full bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 hover:bg-theme hover:text-white transition-colors duration-300">
+                                <i class="fab fa-github mr-2"></i>GitHub
+                            </a>
+                            <a href="https://t.me/lancedeng" target="_blank"
+                                class="px-4 py-2 text-sm font-medium rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 hover:bg-theme hover:text-white transition-colors duration-300">
+                                <i class="fab fa-telegram mr-2"></i>Telegram
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                    <svg class="absolute w-0 h-0">
+                        <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox" stroke="white" stroke-width="2">
+                            <path
+                                d="M0.001,0.031 C0.001,0.014,0.026,0.001,0.055,0.001 H0.492 C0.506,0.001,0.52,0.004,0.53,0.009 L0.61,0.052 C0.62,0.057,0.634,0.06,0.649,0.06 H0.947 C0.977,0.06,1,0.074,1,0.091 V0.971 C1,0.987,0.977,1,0.947,1 H0.055 C0.026,1,0.001,0.987,0.001,0.971 V0.031">
+                            </path>
+                        </clipPath>
+                    </svg>
+                </div>
+
+            </div>
+            <!-- Sidebar Profile End -->
+
+
+            <!-- Nav/Navigation Start -->
+            <div
+                class="minfo__nav__wrapper bg-snowWhite dark:bg-power__black max-xl:hidden fixed top-1/2 -translate-y-1/2 right-4 2xl:right-14 z-999 flex items-center flex-col gap-4 border border-platinum dark:border-metalBlack rounded-4xl px-2.5 py-4">
+
+                <!-- Main Menu/Navigation Start -->
+                <div class="my-4 menu">
+                    <ul class="space-y-2 text-center">
+                        <li data-scroll-nav="0" class="relative group active">
+                            <a href="#home"
+                                class="w-9 h-9 rounded-full flex-center group-[&.active]:bg-white dark:group-[&.active]:bg-metalBlack group-hover:bg-white dark:group-hover:bg-metalBlack transition-all duration-300 before:content-[attr(data-title)] before:absolute before:right-10 before:bg-white dark:before:bg-metalBlack before:text-sm text-theme dark:before:text-white before:px-4 before:py-2 before:rounded-md before:font-normal dark:before:font-light before:opacity-0 before:transition-all before:duration-200 group-hover:before:opacity-100 after:content-[''] after:absolute after:w-0 after:h-0 after:right-8 after:border-solid after:border-t-4 after:border-r-0 after:border-b-4 after:border-l-8 after:border-t-transparent after:border-r-transparent after:border-b-transparent after:border-l-white dark:after:border-l-metalBlack after:opacity-0 after:transition-all after:duration-200 group-hover:after:opacity-100"
+                                data-title="Home">
+                                <span
+                                    class="text-black dark:text-white group-hover:text-theme group-[&.active]:text-theme">
+                                    <i class="fal fa-home"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li data-scroll-nav="1" class="relative group">
+                            <a href="#about"
+                                class="w-9 h-9 rounded-full flex-center group-[&.active]:bg-white dark:group-[&.active]:bg-metalBlack group-hover:bg-white dark:group-hover:bg-metalBlack transition-all duration-300 before:content-[attr(data-title)] before:absolute before:right-10 before:bg-white dark:before:bg-metalBlack before:text-sm text-theme dark:before:text-white before:px-4 before:py-2 before:rounded-md before:font-normal dark:before:font-light before:opacity-0 before:transition-all before:duration-200 group-hover:before:opacity-100 after:content-[''] after:absolute after:w-0 after:h-0 after:right-8 after:border-solid after:border-t-4 after:border-r-0 after:border-b-4 after:border-l-8 after:border-t-transparent after:border-r-transparent after:border-b-transparent after:border-l-white dark:after:border-l-metalBlack after:opacity-0 after:transition-all after:duration-200 group-hover:after:opacity-100"
+                                data-title="About">
+                                <span
+                                    class="text-black dark:text-white group-hover:text-theme group-[&.active]:text-theme">
+                                    <i class="fal fa-user"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li data-scroll-nav="2" class="relative group">
+                            <a href="#service"
+                                class="w-9 h-9 rounded-full flex-center group-[&.active]:bg-white dark:group-[&.active]:bg-metalBlack group-hover:bg-white dark:group-hover:bg-metalBlack transition-all duration-300 before:content-[attr(data-title)] before:absolute before:right-10 before:bg-white dark:before:bg-metalBlack before:text-sm text-theme dark:before:text-white before:px-4 before:py-2 before:rounded-md before:font-normal dark:before:font-light before:opacity-0 before:transition-all before:duration-200 group-hover:before:opacity-100 after:content-[''] after:absolute after:w-0 after:h-0 after:right-8 after:border-solid after:border-t-4 after:border-r-0 after:border-b-4 after:border-l-8 after:border-t-transparent after:border-r-transparent after:border-b-transparent after:border-l-white dark:after:border-l-metalBlack after:opacity-0 after:transition-all after:duration-200 group-hover:after:opacity-100"
+                                data-title="Service">
+                                <span
+                                    class="text-black dark:text-white group-hover:text-theme group-[&.active]:text-theme">
+                                    <i class="fal fa-briefcase"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li data-scroll-nav="3" class="relative group">
+                            <a href="#skill"
+                                class="w-9 h-9 rounded-full flex-center group-[&.active]:bg-white dark:group-[&.active]:bg-metalBlack group-hover:bg-white dark:group-hover:bg-metalBlack transition-all duration-300 before:content-[attr(data-title)] before:absolute before:right-10 before:bg-white dark:before:bg-metalBlack before:text-sm text-theme dark:before:text-white before:px-4 before:py-2 before:rounded-md before:font-normal dark:before:font-light before:opacity-0 before:transition-all before:duration-200 group-hover:before:opacity-100 after:content-[''] after:absolute after:w-0 after:h-0 after:right-8 after:border-solid after:border-t-4 after:border-r-0 after:border-b-4 after:border-l-8 after:border-t-transparent after:border-r-transparent after:border-b-transparent after:border-l-white dark:after:border-l-metalBlack after:opacity-0 after:transition-all after:duration-200 group-hover:after:opacity-100"
+                                data-title="Skills">
+                                <span
+                                    class="text-black dark:text-white group-hover:text-theme group-[&.active]:text-theme">
+                                    <i class="fal fa-graduation-cap"></i>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li data-scroll-nav="5" class="relative group">
+                            <a href="#portfolio"
+                                class="w-9 h-9 rounded-full flex-center group-[&.active]:bg-white dark:group-[&.active]:bg-metalBlack group-hover:bg-white dark:group-hover:bg-metalBlack transition-all duration-300 before:content-[attr(data-title)] before:absolute before:right-10 before:bg-white dark:before:bg-metalBlack before:text-sm text-theme dark:before:text-white before:px-4 before:py-2 before:rounded-md before:font-normal dark:before:font-light before:opacity-0 before:transition-all before:duration-200 group-hover:before:opacity-100 after:content-[''] after:absolute after:w-0 after:h-0 after:right-8 after:border-solid after:border-t-4 after:border-r-0 after:border-b-4 after:border-l-8 after:border-t-transparent after:border-r-transparent after:border-b-transparent after:border-l-white dark:after:border-l-metalBlack after:opacity-0 after:transition-all after:duration-200 group-hover:after:opacity-100"
+                                data-title="Poftfolio">
+                                <span
+                                    class="text-black dark:text-white group-hover:text-theme group-[&.active]:text-theme">
+                                    <i class="fal fa-tasks-alt"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li data-scroll-nav="6" class="relative group">
+                            <a href="#blog"
+                                class="w-9 h-9 rounded-full flex-center group-[&.active]:bg-white dark:group-[&.active]:bg-metalBlack group-hover:bg-white dark:group-hover:bg-metalBlack transition-all duration-300 before:content-[attr(data-title)] before:absolute before:right-10 before:bg-white dark:before:bg-metalBlack before:text-sm text-theme dark:before:text-white before:px-4 before:py-2 before:rounded-md before:font-normal dark:before:font-light before:opacity-0 before:transition-all before:duration-200 group-hover:before:opacity-100 after:content-[''] after:absolute after:w-0 after:h-0 after:right-8 after:border-solid after:border-t-4 after:border-r-0 after:border-b-4 after:border-l-8 after:border-t-transparent after:border-r-transparent after:border-b-transparent after:border-l-white dark:after:border-l-metalBlack after:opacity-0 after:transition-all after:duration-200 group-hover:after:opacity-100"
+                                data-title="Blog">
+                                <span
+                                    class="text-black dark:text-white group-hover:text-theme group-[&.active]:text-theme">
+                                    <i class="fal fa-blog"></i>
+                                </span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <!-- Main Menu/Navigation End -->
+
+
+
+            </div>
+            <!-- Nav/Navigation End -->
+
+
+            <!-- Main Content Start -->
+            <div class="relative mx-auto minfo__contentBox max-w-container xl:max-2xl:max-w-65rem">
+
+                <!-- Hero/Introduction Section Start -->
+                <div data-scroll-index="0" id="home"
+                    class="py-5 xl:py-3.5 max-w-content xl:max-2xl:max-w-50rem max-xl:mx-auto xl:ml-auto">
+
+                    <div class="px-5 py-8 bg-white dark:bg-nightBlack rounded-2xl hero-section md:p-8 lg:p-10 2xl:p-13">
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-wide text-black dark:text-white border lg:px-5 section-name border-platinum dark:border-greyBlack200 rounded-4xl">
+                            <i class="fal fa-home text-theme"></i>
+                            INTRODUCE
+                        </div>
+                        <div class="items-center gap-6 hero-content md:flex xl:gap-10">
+                            <div class="text-content pt-7 lg:pt-8 max-lg:max-w-[30rem]">
+                                <h1
+                                    class="text-[32px] lg:text-5xl xl:text-4xl 2xl:text-5xl font-semibold text-black dark:text-white leading-1.27 lg:leading-1.27 xl:leading-1.27 2xl:leading-1.27 mb-4 lg:mb-5">
+                                    Bridging <br>
+                                    <span class="text-theme">Web3 & AI</span>
+                                </h1>
+                                <p>
+                                    I am a <span class="font-medium text-black dark:text-white/90">Bitcoin & ZK
+                                        Expert</span> with deep expertise in AI integration. Currently focusing on AI
+                                    Agent development and Web3 infrastructure. Leading technical innovation in
+                                    blockchain scalability and privacy solutions.
+                                </p>
+                                <ul class="flex items-center mt-4 -mx-3 lg:mt-5">
+                                    <li class="flex items-center mx-3 text-regular">
+                                        <i class="mr-2 fal fa-check-double text-theme"></i>
+                                        Technical PM
+                                    </li>
+                                    <li class="flex items-center mx-3 text-regular">
+                                        <i class="mr-2 fal fa-check-double text-theme"></i>
+                                        AI Agent Expert
+                                    </li>
+                                </ul>
+                                <ul class="mt-7 buttons">
+                                    <li>
+                                        <a href="https://t.me/lancedeng" target="_blank"
+                                            class="btn-theme inline-flex items-center gap-2 bg-theme text-power__black py-4 md:py-4.5 lg:px-9 px-7 rounded-4xl leading-none transition-all duration-300 hover:shadow-theme_shadow text-white font-medium text-[15px] md:text-base">
+                                            <i class="fab fa-telegram"></i>
+                                            CONTACT ME
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <div class="hero-image flex-[0_0_20.3rem] max-md:hidden">
+                                <img src="assets/img/hero-img-1.png" class="dark:hidden" alt="Hero Image - Light Mode">
+                                <img src="assets/img/hero-img-2.png" class="hidden dark:block"
+                                    alt="Hero Image - Dark Mode">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Hero/Introduction Section End -->
+
+
+                <!-- About Me Section Start -->
+                <div data-scroll-index="1" id="about"
+                    class="py-3.5  max-w-content xl:max-2xl:max-w-50rem max-xl:mx-auto xl:ml-auto">
+
+                    <div
+                        class="px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl about-section lg:p-10 2xl:p-13">
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-wide text-black dark:text-white border lg:px-5 section-name border-platinum dark:border-greyBlack200 rounded-4xl">
+                            <i class="fal fa-user text-theme"></i>
+                            ABOUT ME
+                        </div>
+                        <div class="mt-7 md:mt-10 section-title">
+                            <h2
+                                class="title text-[32px] md:text-4xl lg:text-5xl font-extralight text-black dark:text-white leading-1.27">
+                                About <span class="font-semibold text-theme">Me</span>
+                            </h2>
+                            <p class="max-w-2xl mt-4 md:mt-6 subtitle">
+                                I'm <span class="text-black dark:text-white">Lance Deng</span>, a Web3 developer and AI
+                                enthusiast. With a strong background in blockchain development and cryptography, I'm
+                                currently leading innovation in AI-blockchain integration and building developer
+                                communities.
+                            </p>
+                        </div>
+                        <div class="mt-6 section-content">
+                            <!-- 替换原来的技能标签为成就链接 -->
+                            <div class="inline-flex flex-wrap items-center gap-2 mb-5 text-sm md:gap-4">
+                                <a href="https://hetu.org/" target="_blank"
+                                    class="inline-block px-3.5 py-2 transition duration-300 border border-dashed text-black dark:text-white/70 border-platinum dark:border-greyBlack rounded-3xl md:px-5 md:py-2 hover:text-theme dark:hover:text-white">
+                                    Work on hetu protocol
+                                </a>
+                                <a href="https://moonbeam.network/" target="_blank"
+                                    class="inline-block px-3.5 py-2 transition duration-300 border border-dashed text-black dark:text-white/70 border-platinum dark:border-greyBlack rounded-3xl md:px-5 md:py-2 hover:text-theme dark:hover:text-white">
+                                    🏆 Moonbeam Grant Recipient
+                                </a>
+                                <a href="https://starkware.co/ecosystem/" target="_blank"
+                                    class="inline-block px-3.5 py-2 transition duration-300 border border-dashed text-black dark:text-white/70 border-platinum dark:border-greyBlack rounded-3xl md:px-5 md:py-2 hover:text-theme dark:hover:text-white">
+                                    🌟 StarkNet Grant Winner
+                                </a>
+                                <a href="https://space.id/" target="_blank"
+                                    class="inline-block px-3.5 py-2 transition duration-300 border border-dashed text-black dark:text-white/70 border-platinum dark:border-greyBlack rounded-3xl md:px-5 md:py-2 hover:text-theme dark:hover:text-white">
+                                    ❤️ SpaceID Grant Winner
+                                </a>
+                                <a href="https://udaya.dev" target="_blank"
+                                    class="inline-block px-3.5 py-2 transition duration-300 border border-dashed text-black dark:text-white/70 border-platinum dark:border-greyBlack rounded-3xl md:px-5 md:py-2 hover:text-theme dark:hover:text-white">
+                                    🚀 Udaya Community Contributor
+                                </a>
+                            </div>
+
+                            <ul class="grid mt-4 mb-10 text-sm lg:mt-6 md:grid-cols-1 gap-x-8 gap-y-3">
+                                <li class="flex items-center">
+                                    <span class="flex-[0_0_6rem]">Achievements</span>
+                                    <span class="flex-[0_0_2rem]">:</span>
+                                    <span class="text-black dark:text-white">Secured major grants from Moonbeam and
+                                        StarkNet for innovative blockchain solutions. Successfully delivered multiple
+                                        high-impact projects in the ZK and Layer2 space.</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="flex-[0_0_6rem]">Current Focus</span>
+                                    <span class="flex-[0_0_2rem]">:</span>
+                                    <span class="text-black dark:text-white">Leading Udaya Developer Community, building
+                                        bridges between Web3 and AI technologies. Developing AI-powered tools and
+                                        infrastructure for blockchain development.</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="flex-[0_0_6rem]">Vision</span>
+                                    <span class="flex-[0_0_2rem]">:</span>
+                                    <span class="text-black dark:text-white">Creating a vibrant ecosystem where AI and
+                                        blockchain technologies converge, empowering developers to build the next
+                                        generation of decentralized applications.</span>
+                                </li>
+                            </ul>
+
+                            <ul class="grid grid-cols-2 gap-6 md:grid-cols-4 xl:gap-8">
+                                <li class="">
+                                    <div class="mb-1 text-2xl font-semibold md:text-3xl number text-theme 2xl:text-4xl">
+                                        <span>3+</span>
+                                    </div>
+                                    <div class="text-sm">Major Grants</div>
+                                </li>
+                                <li class="">
+                                    <div class="mb-1 text-2xl font-semibold md:text-3xl number text-theme 2xl:text-4xl">
+                                        <span>1000+</span>
+                                    </div>
+                                    <div class="text-sm">Community Members</div>
+                                </li>
+                                <li class="">
+                                    <div class="mb-1 text-2xl font-semibold md:text-3xl number text-theme 2xl:text-4xl">
+                                        <span>10+</span>
+                                    </div>
+                                    <div class="text-sm">Projects</div>
+                                </li>
+                                <li class="">
+                                    <div class="mb-1 text-2xl font-semibold md:text-3xl number text-theme 2xl:text-4xl">
+                                        <span>5+</span>
+                                    </div>
+                                    <div class="text-sm">Years in Web3</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- About Me Section End -->
+
+                <!-- My Services Section Start -->
+                <div data-scroll-index="2" id="service"
+                    class="py-5 xl:py-3.5 max-w-content xl:max-2xl:max-w-50rem max-xl:mx-auto xl:ml-auto">
+
+                    <div
+                        class="px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl service-section lg:p-10 2xl:p-13">
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-wide text-black dark:text-white border lg:px-5 section-name border-platinum dark:border-greyBlack200 rounded-4xl">
+                            <i class="fal fa-briefcase text-theme"></i>
+                            SERVICES
+                        </div>
+                        <div class="mb-8 mt-7 md:my-10 section-title">
+                            <h2
+                                class="title text-[32px] md:text-4xl lg:text-5xl font-extralight text-black dark:text-white leading-1.27">
+                                My <span class="font-semibold text-theme">Services</span>
+                            </h2>
+                            <p class="max-w-xl mt-4 md:mt-6 subtitle">
+                                Specializing in AI-Web3 integration, technical product management, full-stack
+                                development, and blockchain research. Building the future of decentralized intelligence.
+                            </p>
+                        </div>
+
+                        <div class="grid gap-5 md:gap-6 service-card-wrapper sm:grid-cols-2 lg:gap-7 2xl:gap-8">
+                            <!-- AI Agent Service -->
+                            <div
+                                class="relative p-5 transition duration-300 border py-7 md:p-7 card-item group border-platinum dark:border-metalBlack rounded-2xl xl:p-8 2xl:p-10 hover:border-theme">
+                                <div
+                                    class="absolute transition duration-300 md:top-10 icon right-6 top-7 md:right-8 group-hover:-rotate-45 lg:top-11">
+                                    <i class="fal fa-robot text-[64px] font-bold text-theme"></i>
+                                </div>
+                                <div
+                                    class="text-5xl font-extrabold transition duration-300 md:text-6xl number lg:text-7xl text-greyBlack opacity-30 group-hover:opacity-100">
+                                    01</div>
+                                <h4 class="mt-5 mb-4 text-xl font-medium text-black dark:text-white xl:text-2xl">AI
+                                    Agent Expert</h4>
+                                <p>Specializing in AI-blockchain integration, developing intelligent agents for DeFi and
+                                    Web3 applications. Expert in LLM implementation and AI-powered automation solutions.
+                                </p>
+                            </div>
+
+                            <!-- Product Manager Service -->
+                            <div
+                                class="relative p-5 transition duration-300 border py-7 md:p-7 card-item group border-platinum dark:border-metalBlack rounded-2xl xl:p-8 2xl:p-10 hover:border-theme">
+                                <div
+                                    class="absolute transition duration-300 md:top-10 icon right-6 top-7 md:right-8 group-hover:-rotate-45 lg:top-11">
+                                    <i class="fal fa-tasks-alt text-[64px] font-bold text-theme"></i>
+                                </div>
+                                <div
+                                    class="text-5xl font-extrabold transition duration-300 md:text-6xl number lg:text-7xl text-greyBlack opacity-30 group-hover:opacity-100">
+                                    02</div>
+                                <h4 class="mt-5 mb-4 text-xl font-medium text-black dark:text-white xl:text-2xl">
+                                    Technical PM</h4>
+                                <p>Leading Web3 product development from concept to launch. Expertise in PRD
+                                    documentation, technical roadmap planning, and cross-functional team coordination.
+                                </p>
+                            </div>
+
+                            <!-- Full-stack Developer Service -->
+                            <div
+                                class="relative p-5 transition duration-300 border py-7 md:p-7 card-item group border-platinum dark:border-metalBlack rounded-2xl xl:p-8 2xl:p-10 hover:border-theme">
+                                <div
+                                    class="absolute transition duration-300 md:top-10 icon right-6 top-7 md:right-8 group-hover:-rotate-45 lg:top-11">
+                                    <i class="fal fa-code text-[64px] font-bold text-theme"></i>
+                                </div>
+                                <div
+                                    class="text-5xl font-extrabold transition duration-300 md:text-6xl number lg:text-7xl text-greyBlack opacity-30 group-hover:opacity-100">
+                                    03</div>
+                                <h4 class="mt-5 mb-4 text-xl font-medium text-black dark:text-white xl:text-2xl">
+                                    Full-Stack Developer</h4>
+                                <p>Building end-to-end Web3 solutions with expertise in ZK proofs, smart contracts, and
+                                    DApp development. Proficient in Rust, Solidity, Cairo, and modern frontend
+                                    frameworks.</p>
+                            </div>
+
+                            <!-- Nostr & Research Service -->
+                            <div
+                                class="relative p-5 transition duration-300 border py-7 md:p-7 card-item group border-platinum dark:border-metalBlack rounded-2xl xl:p-8 2xl:p-10 hover:border-theme">
+                                <div
+                                    class="absolute transition duration-300 md:top-10 icon right-6 top-7 md:right-8 group-hover:-rotate-45 lg:top-11">
+                                    <i class="fal fa-microscope text-[64px] font-bold text-theme"></i>
+                                </div>
+                                <div
+                                    class="text-5xl font-extrabold transition duration-300 md:text-6xl number lg:text-7xl text-greyBlack opacity-30 group-hover:opacity-100">
+                                    04</div>
+                                <h4 class="mt-5 mb-4 text-xl font-medium text-black dark:text-white xl:text-2xl">Nostr &
+                                    Research</h4>
+                                <p>Conducting research on decentralized social protocols and blockchain scalability.
+                                    Contributing to Nostr ecosystem development and publishing technical insights on
+                                    Web3 innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- My Services Section End -->
+
+
+
+
+                <!-- Skills Section Start -->
+                <div data-scroll-index="3" id="skill"
+                    class="py-5 xl:py-3.5 max-w-content xl:max-2xl:max-w-50rem max-xl:mx-auto xl:ml-auto">
+
+                    <div
+                        class="relative px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl service-section lg:p-10 2xl:p-13">
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-wide text-black dark:text-white border lg:px-5 section-name border-platinum dark:border-greyBlack200 rounded-4xl">
+                            <i class="fal fa-graduation-cap text-theme"></i>
+                            SKILLS
+                        </div>
+                        <div class="mb-8 mt-7 md:my-10 section-title">
+                            <h2
+                                class="title text-[32px] md:text-4xl lg:text-5xl font-extralight text-black dark:text-white leading-1.27">
+                                Technical <span class="font-semibold text-theme">Skills</span>
+                            </h2>
+                        </div>
+
+                        <div class="grid gap-5 md:gap-6 skills-wrapper sm:grid-cols-2 lg:gap-7 2xl:gap-8">
+                            <!-- AI Agent Skills -->
+                            <div class="p-6 border rounded-xl border-platinum dark:border-metalBlack">
+                                <h3 class="mb-4 text-lg font-medium text-black dark:text-white">AI Agent Development
+                                </h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
+                                        AI Product
+                                    </span>
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
+                                        LLMs
+                                    </span>
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
+                                        AI Integration
+                                    </span>
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
+                                        eliza
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Product Management Skills -->
+                            <div class="p-6 border rounded-xl border-platinum dark:border-metalBlack">
+                                <h3 class="mb-4 text-lg font-medium text-black dark:text-white">Technical PM</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+                                        PRD Writing
+                                    </span>
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+                                        Figma/Axure
+                                    </span>
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+                                        Technical Planning
+                                    </span>
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+                                        Team Leadership
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Full-stack Development Skills -->
+                            <div class="p-6 border rounded-xl border-platinum dark:border-metalBlack">
+                                <h3 class="mb-4 text-lg font-medium text-black dark:text-white">Full-Stack Development
+                                </h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
+                                        Rust & Python
+                                    </span>
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
+                                        Solidity
+                                    </span>
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
+                                        Cairo
+                                    </span>
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
+                                        React
+                                    </span>
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
+                                        Circom
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Research Skills -->
+                            <div class="p-6 border rounded-xl border-platinum dark:border-metalBlack">
+                                <h3 class="mb-4 text-lg font-medium text-black dark:text-white">Research & Innovation
+                                </h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400">
+                                        Nostr Protocol
+                                    </span>
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400">
+                                        Bitcoin Script
+                                    </span>
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400">
+                                        Layer2 Solutions
+                                    </span>
+                                    <span
+                                        class="px-3 py-1 text-sm font-medium rounded-full bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400">
+                                        DeFi Research
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Skills Section End -->
+
+
+
+
+                <!-- Portfolio Section Start -->
+                <div data-scroll-index="5" id="portfolio"
+                    class="py-5 xl:py-3.5 max-w-content xl:max-2xl:max-w-50rem max-xl:mx-auto xl:ml-auto">
+
+                    <div
+                        class="px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl service-section lg:p-10 2xl:p-13">
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-wide text-black dark:text-white border lg:px-5 section-name border-platinum dark:border-greyBlack200 rounded-4xl">
+                            <i class="fal fa-tasks-alt text-theme"></i>
+                            PORTFOLIO
+                        </div>
+                        <div class="mt-5 mb-8 md:my-10 section-title">
+                            <h2
+                                class="title text-[32px] md:text-4xl lg:text-5xl font-extralight text-black dark:text-white leading-1.27">
+                                Featured <span class="font-semibold text-theme">Projects</span>
+                            </h2>
+
+                        </div><!--./section-title-->
+
+                        <div class="portfolio_wrapper grid sm:grid-cols-2 gap-4 lg:gap-7.5">
+                            <div class="relative item md:col-span-2 z-1 group">
+                                <div
+                                    class='flex items-center justify-center p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack'>
+                                    <div class="img-wrapper">
+                                        <img src="assets/img/zkgamestop.png"
+                                            class="rounded-lg max-md:min-h-[17rem] max-md:w-full max-md:object-cover max-md:object-center transition-all duration-300 group-hover:blur-xs"
+                                            alt="portfolio">
+                                        <div
+                                            class="absolute inset-0 transition-all duration-300 opacity-0 overlay bg-gradient-to-t from-white dark:from-black to-transparent rounded-xl group-hover:opacity-100">
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="info text-center position-center max-lg:text-3xl text-lead font-semibold text-black dark:text-white leading-1.15 transition duration-500 scale-110 opacity-0 group-hover:scale-100 group-hover:opacity-100 relative z-10">
+                                        ZK
+                                        <span>
+                                            GameStop
+                                        </span>
+                                    </div>
+                                </div>
+                                <ul
+                                    class="absolute z-10 transition-all duration-500 opacity-0 md:top-9 md:right-9 top-6 right-6 group-hover:opacity-100">
+                                    <li>
+                                        <a href="#"
+                                            class="inline-flex items-center gap-2 px-5 py-3 text-sm font-light leading-none text-white transition-colors bg-metalBlack rounded-3xl hover:text-theme">
+                                            Go to See
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div><!--./portfolio-card-->
+
+                            <div class="relative item md:col-span-1 z-1 group">
+                                <div
+                                    class='flex items-center justify-center p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack'>
+                                    <div class="img-wrapper">
+                                        <img src="assets/img/atomic-stark.png"
+                                            class="rounded-lg max-md:min-h-[17rem] max-md:w-full max-md:object-cover max-md:object-center transition-all duration-300 group-hover:blur-xs"
+                                            alt="portfolio">
+                                        <div
+                                            class="absolute inset-0 transition-all duration-300 opacity-0 overlay bg-gradient-to-t from-white dark:from-black to-transparent rounded-xl group-hover:opacity-100">
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="info text-center position-center max-lg:text-3xl text-lead font-semibold text-black dark:text-white leading-1.15 transition duration-500 scale-110 opacity-0 group-hover:scale-100 group-hover:opacity-100 relative z-10">
+                                        AtomiStark
+                                        <span>
+                                            bitcoin & starknet bridge
+                                        </span>
+                                    </div>
+                                </div>
+                                <ul
+                                    class="absolute z-10 transition-all duration-500 opacity-0 md:top-9 md:right-9 top-6 right-6 group-hover:opacity-100">
+                                    <li>
+                                        <a href="#"
+                                            class="inline-flex items-center gap-2 px-5 py-3 text-sm font-light leading-none text-white transition-colors bg-metalBlack rounded-3xl hover:text-theme">
+                                            Go to See
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div><!--./portfolio-card-->
+
+                            <div class="relative item md:col-span-1 z-1 group">
+                                <div
+                                    class='flex items-center justify-center p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack'>
+                                    <div class="img-wrapper">
+                                        <img src="assets/img/zk2048.png"
+                                            class="rounded-lg max-md:min-h-[17rem] max-md:w-full max-md:object-cover max-md:object-center transition-all duration-300 group-hover:blur-xs"
+                                            alt="portfolio">
+                                        <div
+                                            class="absolute inset-0 transition-all duration-300 opacity-0 overlay bg-gradient-to-t from-white dark:from-black to-transparent rounded-xl group-hover:opacity-100">
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="info text-center position-center max-lg:text-3xl text-lead font-semibold text-black dark:text-white leading-1.15 transition duration-500 scale-110 opacity-0 group-hover:scale-100 group-hover:opacity-100 relative z-10">
+                                        zk
+                                        <span>
+                                            2048
+                                        </span>
+                                    </div>
+                                </div>
+                                <ul
+                                    class="absolute z-10 transition-all duration-500 opacity-0 md:top-9 md:right-9 top-6 right-6 group-hover:opacity-100">
+                                    <li>
+                                        <a href="http://2048.zkgamestop.com/"
+                                            class="inline-flex items-center gap-2 px-5 py-3 text-sm font-light leading-none text-white transition-colors bg-metalBlack rounded-3xl hover:text-theme">
+                                            Go to See
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div><!--./portfolio-card-->
+
+                            <div class="relative item md:col-span-2 z-1 group">
+                                <div
+                                    class='flex items-center justify-center p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack'>
+                                    <div class="img-wrapper">
+                                        <img src="assets/img/aa-wallet.png"
+                                            class="rounded-lg max-md:min-h-[17rem] max-md:w-full max-md:object-cover max-md:object-center transition-all duration-300 group-hover:blur-xs"
+                                            alt="portfolio">
+                                        <div
+                                            class="absolute inset-0 transition-all duration-300 opacity-0 overlay bg-gradient-to-t from-white dark:from-black to-transparent rounded-xl group-hover:opacity-100">
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="info text-center position-center max-lg:text-3xl text-lead font-semibold text-black dark:text-white leading-1.15 transition duration-500 scale-110 opacity-0 group-hover:scale-100 group-hover:opacity-100 relative z-10">
+                                        AA
+                                        <span>
+                                            wallet
+                                        </span>
+                                    </div>
+                                </div>
+                                <ul
+                                    class="absolute z-10 transition-all duration-500 opacity-0 md:top-9 md:right-9 top-6 right-6 group-hover:opacity-100">
+                                    <li>
+                                        <a href="https://www.chainpal.io/"
+                                            class="inline-flex items-center gap-2 px-5 py-3 text-sm font-light leading-none text-white transition-colors bg-metalBlack rounded-3xl hover:text-theme">
+                                            Go to See
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div><!--./portfolio-card-->
+                        </div>
+
+
+                        <div class="mt-10 text-center more-blogs md:mt-13">
+                            <a href="#"
+                                class="inline-flex items-center gap-2 text-[15px] font-medium border border-theme bg-theme text-white py-4.5 px-9 rounded-4xl leading-none transition-all duration-300 hover:bg-themeHover hover:border-themeHover">
+                                More Projects
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Portfolio Section End -->
+
+
+                <!-- Blog Section Start -->
+                <div data-scroll-index="5" id="blog"
+                    class="py-5 xl:py-3.5 max-w-content xl:max-2xl:max-w-50rem max-xl:mx-auto xl:ml-auto">
+
+                    <div
+                        class="px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl service-section lg:p-10 2xl:p-13">
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-wide text-black dark:text-white border lg:px-5 section-name border-platinum dark:border-greyBlack200 rounded-4xl">
+                            <i class="fal fa-blog text-theme"></i>
+                            BLOG
+                        </div>
+                        <div class="mt-5 mb-8 md:my-10 section-title">
+                            <h2
+                                class="title text-[32px] md:text-4xl lg:text-5xl font-extralight text-black dark:text-white leading-1.27">
+                                Latest <span class="font-semibold text-theme">Posts</span>
+                            </h2>
+                            <p class="max-w-xl mt-4 md:mt-6 subtitle">
+                                Technical insights and research on Web3, ZK proofs, and blockchain infrastructure
+                            </p>
+                        </div>
+
+                        <div class="blog-list md:space-y-7.5 space-y-5">
+                            <!-- AtomicStark Article -->
+                            <div
+                                class="grid md:gap-2 grid-cols-12 overflow-hidden article group bg-flashWhite dark:bg-metalBlack items-center rounded-2xl p-3.5">
+                                <div class="flex col-span-12 overflow-hidden thumbnail sm:col-span-6 md:col-span-5">
+                                    <a class='block w-full overflow-hidden rounded-xl'
+                                        href='https://medium.com/@atomicstark/atomicstark-the-first-atomic-swap-bridge-protocol-on-starknet-69481d7edde9'
+                                        target="_blank">
+                                        <img src="assets/img/atomic-stark.png"
+                                            class="object-cover object-center w-full h-full min-h-[288px] transition-all duration-300 ease-in-out max-h-60 md:min-h-60 group-hover:scale-105"
+                                            alt="AtomicStark Protocol">
+                                    </a>
+                                </div>
+                                <div
+                                    class="relative flex flex-col col-span-12 px-3 pt-6 pb-2 md:p-5 post-content sm:col-span-6 md:col-span-7">
+                                    <div class="flex items-center gap-5">
+                                        <div class="text-sm font-medium tags">
+                                            <a href="#" class="transition-colors hover:text-theme">StarkNet</a>,
+                                            <span class="post_date">May 16, 2024</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-title mt-3 md:mt-4.5 mb-6 md:mb-8">
+                                        <a class='text-xl font-semibold leading-normal text-black dark:text-white transition-colors line-clamp-2 2xl:text-2xl 2xl:leading-normal hover:text-theme'
+                                            href='https://medium.com/@atomicstark/atomicstark-the-first-atomic-swap-bridge-protocol-on-starknet-69481d7edde9'
+                                            target="_blank">
+                                            AtomicStark: First Atomic Swap Bridge on StarkNet
+                                        </a>
+                                    </div>
+                                    <div class="read-details">
+                                        <a class='inline-flex items-center gap-2 border border-theme text-theme text-sm py-3.5 px-6 rounded-3xl leading-none transition-all duration-300 hover:bg-themeHover hover:border-themeHover dark:font-medium hover:text-white'
+                                            href='https://medium.com/@atomicstark/atomicstark-the-first-atomic-swap-bridge-protocol-on-starknet-69481d7edde9'
+                                            target="_blank">
+                                            Read More
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Vector Clock Article -->
+                            <div
+                                class="grid md:gap-2 grid-cols-12 overflow-hidden article group bg-flashWhite dark:bg-metalBlack items-center rounded-2xl p-3.5">
+                                <div class="flex col-span-12 overflow-hidden thumbnail sm:col-span-6 md:col-span-5">
+                                    <a class='block w-full overflow-hidden rounded-xl'
+                                        href='https://mp.weixin.qq.com/s/AIZF5QPsjhAAWFMrXfAhAw' target="_blank">
+                                        <img src="assets/img/udaya.jpg"
+                                            class="object-cover object-center w-full h-full min-h-[288px] transition-all duration-300 ease-in-out max-h-60 md:min-h-60 group-hover:scale-105"
+                                            alt="Vector Clock">
+                                    </a>
+                                </div>
+                                <div
+                                    class="relative flex flex-col col-span-12 px-3 pt-6 pb-2 md:p-5 post-content sm:col-span-6 md:col-span-7">
+                                    <div class="flex items-center gap-5">
+                                        <div class="text-sm font-medium tags">
+                                            <a href="#" class="transition-colors hover:text-theme">Distributed
+                                                Systems</a>,
+                                            <span class="post_date">2024</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-title mt-3 md:mt-4.5 mb-6 md:mb-8">
+                                        <a class='text-xl font-semibold leading-normal text-black dark:text-white transition-colors line-clamp-2 2xl:text-2xl 2xl:leading-normal hover:text-theme'
+                                            href='https://mp.weixin.qq.com/s/AIZF5QPsjhAAWFMrXfAhAw' target="_blank">
+                                            Vector Clock Series Tutorial (Part 3)
+                                        </a>
+                                    </div>
+                                    <div class="read-details">
+                                        <a class='inline-flex items-center gap-2 border border-theme text-theme text-sm py-3.5 px-6 rounded-3xl leading-none transition-all duration-300 hover:bg-themeHover hover:border-themeHover dark:font-medium hover:text-white'
+                                            href='https://mp.weixin.qq.com/s/AIZF5QPsjhAAWFMrXfAhAw' target="_blank">
+                                            Read More
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Web3 Bridge Article -->
+                            <div
+                                class="grid md:gap-2 grid-cols-12 overflow-hidden article group bg-flashWhite dark:bg-metalBlack items-center rounded-2xl p-3.5">
+                                <div class="flex col-span-12 overflow-hidden thumbnail sm:col-span-6 md:col-span-5">
+                                    <a class='block w-full overflow-hidden rounded-xl'
+                                        href='https://mp.weixin.qq.com/s/UPU_Fh58j09T5aQeuAv1wQ' target="_blank">
+                                        <img src="assets/img/bridge.png"
+                                            class="object-cover object-center w-full h-full min-h-[288px] transition-all duration-300 ease-in-out max-h-60 md:min-h-60 group-hover:scale-105"
+                                            alt="Bridge Analysis">
+                                    </a>
+                                </div>
+                                <div
+                                    class="relative flex flex-col col-span-12 px-3 pt-6 pb-2 md:p-5 post-content sm:col-span-6 md:col-span-7">
+                                    <div class="flex items-center gap-5">
+                                        <div class="text-sm font-medium tags">
+                                            <a href="#" class="transition-colors hover:text-theme">Web3</a>,
+                                            <span class="post_date">2024</span>
+                                        </div>
+                                    </div>
+                                    <div class="post-title mt-3 md:mt-4.5 mb-6 md:mb-8">
+                                        <a class='text-xl font-semibold leading-normal text-black dark:text-white transition-colors line-clamp-2 2xl:text-2xl 2xl:leading-normal hover:text-theme'
+                                            href='https://mp.weixin.qq.com/s/UPU_Fh58j09T5aQeuAv1wQ' target="_blank">
+                                            Web3 Product Analysis: From Swap to Bridge
+                                        </a>
+                                    </div>
+                                    <div class="read-details">
+                                        <a class='inline-flex items-center gap-2 border border-theme text-theme text-sm py-3.5 px-6 rounded-3xl leading-none transition-all duration-300 hover:bg-themeHover hover:border-themeHover dark:font-medium hover:text-white'
+                                            href='https://mp.weixin.qq.com/s/UPU_Fh58j09T5aQeuAv1wQ' target="_blank">
+                                            Read More
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Section End -->
+
+
+
+
+
+
+                <!-- App End -->
+
+
+
+                <!-- Background Line and Animation -->
+                <div
+                    class="bg-lines fixed inset-0 -z-1 md:max-xl:max-w-[45rem] xl:max-w-60rem 2xl:max-w-container mx-auto max-sm:px-8 sm:max-xl:px-12">
+                    <div
+                        class="line-wrapper max-w-[1130px] w-full h-full ml-auto 2xl:-mr-24 relative flex justify-between">
+
+                        <div
+                            class="relative w-px h-full border-r border-dashed line line1 border-slate-300 dark:border-metalBlack before:absolute before:w-2 before:h-2 before:bg-theme before:rotate-45 before:-left-1 before:animate-top_bottom">
+                        </div>
+
+                        <div
+                            class="relative w-px h-full border-r border-dashed line line2 border-slate-300 dark:border-metalBlack before:absolute before:bottom-0 before:w-2 before:h-2 before:bg-theme before:rotate-45 before:-left-1 before:animate-bottom_top before:animate-delay-3s">
+                        </div>
+
+                        <div
+                            class="relative w-px h-full border-r border-dashed line line3 border-slate-300 dark:border-metalBlack before:absolute before:w-2 before:h-2 before:bg-theme before:rotate-45 before:-left-1 before:animate-top_bottom before:animate-delay-3s">
+                        </div>
+
+                        <div
+                            class="relative w-px h-full border-r border-dashed line line4 border-slate-300 dark:border-metalBlack before:absolute before:bottom-0 before:w-2 before:h-2 before:bg-theme before:rotate-45 before:-left-1 before:animate-bottom_top before:animate-delay-2s">
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Ends Here -->
+
+                <!-- 简化的主题切换按钮HTML -->
+                <div class="style-switcher">
+                    <button class="theme-toggle-btn" id="theme-toggle">
+                        <i class="fal fa-moon dark:hidden"></i>
+                        <i class="fal fa-sun hidden dark:block"></i>
+                    </button>
+                </div>
+
+                <!-- 更新主题切换逻辑 -->
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const themeToggle = document.getElementById('theme-toggle');
+
+                        themeToggle.addEventListener('click', function () {
+                            document.documentElement.classList.toggle('dark');
+                            // 保存主题设置
+                            const isDark = document.documentElement.classList.contains('dark');
+                            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                        });
+
+                        // 加载保存的主题设置
+                        const savedTheme = localStorage.getItem('theme');
+                        if (savedTheme === 'dark') {
+                            document.documentElement.classList.add('dark');
+                        }
+                    });
+                </script>
+
+                <!-- 更新加载页面的JavaScript -->
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        // 确保所有资源加载完成后移除加载页面
+                        window.addEventListener('load', function () {
+                            const preloader = document.getElementById('preloader');
+                            if (preloader) {
+                                preloader.style.opacity = '0';
+                                setTimeout(() => {
+                                    preloader.style.display = 'none';
+                                }, 500);
+                            }
+                        });
+                    });
+                </script>
+
+                <!-- 添加移动端菜单的 JavaScript -->
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const menuToggle = document.querySelector('.menu_toggle');
+                        const mobileMenu = document.querySelector('.mobile-menu');
+                        const closeMenu = document.querySelector('.close-menu');
+                        const menuOverlay = document.querySelector('.menu-overlay');
+
+                        // 打开菜单
+                        menuToggle.addEventListener('click', function () {
+                            mobileMenu.classList.add('is-menu-open');
+                            menuOverlay.classList.add('is-menu-open');
+                            document.body.style.overflow = 'hidden';
+                        });
+
+                        // 关闭菜单
+                        function closeMenuHandler() {
+                            mobileMenu.classList.remove('is-menu-open');
+                            menuOverlay.classList.remove('is-menu-open');
+                            document.body.style.overflow = '';
+                        }
+
+                        closeMenu.addEventListener('click', closeMenuHandler);
+                        menuOverlay.addEventListener('click', closeMenuHandler);
+
+                        // 点击菜单项后关闭菜单
+                        const menuItems = mobileMenu.querySelectorAll('a');
+                        menuItems.forEach(item => {
+                            item.addEventListener('click', function () {
+                                closeMenuHandler();
+                            });
+                        });
+                    });
+                </script>
+
+                <!-- 确保引入了必要的CSS和JS -->
+                <link rel="stylesheet" href="assets/css/cdheadline.css">
+                <script src="assets/js/jquery.min.js"></script>
+                <script src="assets/js/jquery.cd.headline.min.js"></script>
+
+                <!-- 添加初始化脚本 -->
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        jQuery(document).ready(function ($) {
+                            //set animation timing
+                            var animationDelay = 2500,
+                                //loading bar effect
+                                barAnimationDelay = 3800,
+                                barWaiting = barAnimationDelay - 3000, //3000 is the duration of the transition on the loading bar - set in the scss/css file
+                                //letters effect
+                                lettersDelay = 50,
+                                //type effect
+                                typeLettersDelay = 150,
+                                selectionDuration = 500,
+                                typeAnimationDelay = selectionDuration + 800,
+                                //clip effect 
+                                revealDuration = 600,
+                                revealAnimationDelay = 1500;
+
+                            initHeadline();
+
+                            function initHeadline() {
+                                //insert <i> element for each letter of a changing word
+                                singleLetters($('.cd-headline.letters').find('b'));
+                                //initialise headline animation
+                                animateHeadline($('.cd-headline'));
+                            }
+                        });
+                    });
+                </script>
+
+                <!-- 在 body 结束标签前添加这些 JS 文件 -->
+                <script src="assets/js/jquery-3.6.0.min.js"></script>
+                <script src="assets/js/waypoints.min.js"></script>
+                <script src="assets/js/tw-elements.umd.min.js"></script>
+                <script src="assets/js/cd-headline.js"></script>
+                <script src="assets/js/jquery.counterup.min.js"></script>
+                <script src="assets/js/swiper-bundle.min.js"></script>
+                <script src="assets/js/scrollIt.min.js"></script>
+                <script src="assets/js/circle-progress.min.js"></script>
+                <script src="assets/js/script.js"></script>
+                <script src="assets/js/theme-mode.js"></script>
+</body>
+
+</html>
